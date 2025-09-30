@@ -15,7 +15,7 @@ function App(){
   return(
     <div>
       {quotes.map((quote)=>(
-        <h3 key={quote.id}>{quote.quote}</h3>
+        <h1 key={quote.id}>{quote.quote}</h1>
       ))}
     </div>
   )
