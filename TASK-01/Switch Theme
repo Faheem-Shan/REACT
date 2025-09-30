@@ -1,0 +1,26 @@
+import React,{useState} from "react";
+function App(){
+  const[isDark,setIsDark]=useState(false);
+  const toggleTheme=()=>{
+    setIsDark(!isDark);
+  }
+  const appStyle={
+    height:"100vh",
+    margin:0,
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    backgroundColor:isDark? '#121212':'#ffffff',
+    color: isDark ? '#ffffff' : '#161515ff',
+    transition:'background-color 0.3s ,color 0.3s',
+    flexDirection:'column'
+  }
+
+  return(
+    <div style={appStyle}>
+      <h1>{isDark? 'Dark theme':'Light theme'}</h1>
+      <button onClick={toggleTheme}>switch theme</button>
+    </div>
+  )
+}
+export default App;
