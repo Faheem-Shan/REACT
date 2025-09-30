@@ -1,0 +1,23 @@
+import React,{useState,useEffect} from 'react';
+function App(){
+  const[quotes,setquotes]=useState([]);
+  useEffect(()=>{
+    fetch("https://dummyjson.com/quotes")
+    .then(res=>res.json())
+    .then(data=>{
+      setquotes(data.quotes.slice(0,10));
+    })
+    .catch(err=>console.error(err));
+  },[])
+
+
+
+  return(
+    <div>
+      {quotes.map((quote)=>(
+        <h3 key={quote.id}>{quote.quote}</h3>
+      ))}
+    </div>
+  )
+}
+export default App;
